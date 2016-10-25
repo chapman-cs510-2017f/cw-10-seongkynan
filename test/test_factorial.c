@@ -2,6 +2,10 @@
 #include "minunit.h"
 #include "../src/factorial.h"
 
+/* Note: structure of test file taken from minunit example at
+ *   http://www.jera.com/techinfo/jtns/jtn002.html
+ */
+
 // Needed for minunit to function properly
 int tests_run = 0;
 
