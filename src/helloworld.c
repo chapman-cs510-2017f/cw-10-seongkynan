@@ -18,7 +18,7 @@
  * The returned int of the C program becomes the exit code, where 0 is success
  * 
  * By convention, the main function has two arguments:
- *   int argc     : the number of command line arguments
+ *   int argc     : the number of command line arguments, including program name
  *   char **argv  : an array of strings, one for each command line argument
  *
  * Note: (char *) is an array of characters (i.e., a rudimentary string)
@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
 
     // argv is an array of strings of the command line arguments
     // argv[0] is the name of the program itself, and always exists
-    // argv[argc] is the last argument provided
+    // argv[argc-1] is the last argument provided
     char *program = argv[0];
 
     /* Note on printf:
