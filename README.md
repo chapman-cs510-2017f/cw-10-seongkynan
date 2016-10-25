@@ -30,8 +30,8 @@ Complete the following exercises, saving your solutions in the indicated files.
     * Describe the algorithm being used.
     * Describe at least two problems with the current function definition.  
     * Describe how you can fix those problems.
-1. Edit the file ```factorial.c``` to fix the two problems you identified. Make sure the tests now pass.
-1. Edit the file ```test_factorial.c``` to add one more reasonable test for the factorial function. Make sure the new test passes. 
+1. Edit the file ```factorial.c``` (using ```vim```) to fix the two problems you identified. Make sure the tests now pass.
+1. Edit the file ```test_factorial.c``` (using ```vim```) to add one more reasonable test for the factorial function. Make sure the new test passes. 
 1. Push only the changes to the header or source files to GitHub, along with your Jupyter notebooks. You should never push binary programs, or object files, or logs.
 1. Make sure that Travis passes correctly.
 
