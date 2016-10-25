@@ -1,32 +1,40 @@
-# CS510 CW 8
+# CS510 CW 9
 
 **Author(s):** _\<your name(s)\>_
 
-[![Build Status](https://travis-ci.org/chapman-cs510-2016f/cw-08-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-cs510-2016f/cw-08-YOURNAME)
+[![Build Status](https://travis-ci.org/chapman-cs510-2016f/cw-09-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-cs510-2016f/cw-09-YOURNAME)
 
-**Due date:** 2016/10/25
+**Due date:** 2016/11/01
 
 ## Specification
 
-**Note: Remember to use Python 3.**
+**Note: Remember this is a C project.**
 
 Complete the following exercises, saving your solutions in the indicated files. 
 
-1. Copy your CW07 julia set modules into CW08. Modify your implementation so that it uses ```numba``` Just-In-Time (JIT) compilation to speed up your code, using the code block below as a guide. Specifically:
-    * Import ```numba``` at the top of your module, in addition to ```numpy```.
-    * When creating the ```julia``` function that transforms the entire complex plane, include a "decorator" (```@nb.vectorize```) just before your function definition to enable JIT compilation. (See below for the correct type signature.) 
-    * Use the vectorization properly when applying the ```julia``` function to your complex plane as a ```numpy``` array (or ```DataFrame```). Note that if you called ```np.vectorize``` from ```numpy``` to vectorize your code before, this is no longer needed: the decorator for ```numba``` completely replaces this functionality by making your function a natively compiled ```ufunc``` directly.
-1. In a notebook ```julia-benchmark.ipynb```, create a complex plane of size 10000 x 10000 points. First run your ```refresh``` method with the ```numba``` decorator commented out (and the ```numpy``` vectorization restored if necessary), and use ```%time``` to see how long your old implementation takes to compute the set (for an interesting ```c``` value that you like). Then uncomment the decorator to enable the JIT compilation with ```numba``` (removing the ```numpy``` vectorization if necessary), and again use ```%time``` to refresh the plane. How much faster does the code run after adding this one line of code? Detail your benchmarking investigation in your notebook.
-1. Work through the [Julia Overview Slides](http://slides.com/profdressel/julia-overview/). Create the appropriate notebooks and test functions as you follow along. Discuss and ask questions.
+1. Read the following style guide carefully for C, and use it: [C Style Guide](https://en.wikibooks.org/wiki/C_Programming/Structure_and_style)
+1. Use the following references as needed in what follows. They will be useful throughout the rest of the course.
+    * [Learn C in Y Minutes](https://learnxinyminutes.com/docs/c/)
+    * [C Cheat Sheet](https://www.cheatography.com/ashlyn-black/cheat-sheets/c-reference/)
+    * [C Programming Wikibook](https://en.wikibooks.org/wiki/C_Programming)
+    * [Learn Make in Y Minutes](https://learnxinyminutes.com/docs/make/)
+1. Verify that running the command ```make test``` in a command line (from within your repository directory) compiles code and runs unit tests. Do the tests pass? Look through the code. In a Jupyter notebook ```C_Compilation.ipynb```:
+    * Describe what the purpose of a Makefile is
+    * Describe how the code is organized here. Why is this a reasonable structure?
+    * Describe what a header file is.
+    * Describe what a source file is.
+    * Describe what an object file is.
+    * Describe what compiling is.
+    * Describe what linking is.
+1. Look at the definitions for the C function ```int factorial(int n)```. In a Jupyter notebook ```Factorial.ipynb```:
+    * Describe the algorithm being used.
+    * Describe at least two problems with the current function definition.  
+    * Describe how you can fix those problems.
+1. Edit the file ```factorial.c``` to fix the two problems you identified. Make sure the tests now pass.
+1. Edit the file ```test_factorial.c``` to add one more reasonable test for the factorial function. Make sure the new test passes. 
+1. Push only the changes to the header or source files to GitHub, along with your Jupyter notebooks. You should never push binary programs, or object files, or logs.
+1. Make sure that Travis passes correctly.
 
-```python
-import numba as nb
-
-@nb.vectorize([nb.int32(nb.complex128)])
-def julia(z):
-    # Your previous code here
-    pass
-```
 ## Assessment
 
 Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have.
