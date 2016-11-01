@@ -17,7 +17,7 @@ Complete the following exercises, saving your solutions in the indicated files.
     * [C Cheat Sheet](https://www.cheatography.com/ashlyn-black/cheat-sheets/c-reference/)
     * [C Programming Wikibook](https://en.wikibooks.org/wiki/C_Programming)
     * [Learn Make in Y Minutes](https://learnxinyminutes.com/docs/make/)
-1. Note that a ```bin``` directory has been added. Pay attention to how ```make``` uses this directory in what follows.
+1. Note that a ```bin``` directory will be created by ```make```. Pay attention to how it is used in what follows. Also pay attention to the added compiler flags in the ```Makefile```
 1. Examine the source code in ```src/bit_print``` carefully. Compile and run it.
     1. In a Jupyter notebook ```BitPrint.ipynb```, describe what ```print_types``` does in detail. Answer the following questions.
     1. What are the integer values for the letters 'A', 'Z', 'a', and 'z'?

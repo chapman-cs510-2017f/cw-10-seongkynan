@@ -14,6 +14,7 @@ export CFLAGS = -Wall -O2
 # As written, this descends into subdirectories src and test
 # and executes "make" in those directories, respectively
 all:
+	mkdir -p bin
 	$(MAKE) -C src/
 	$(MAKE) -C test/
 
