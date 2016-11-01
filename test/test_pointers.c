@@ -36,9 +36,10 @@ static char * test_pass_by_value() {
     COMP x = 0, y = 0, z = 0;
     VEC3 v = {x, y, z};
     VEC3 w = modifyVec3(v, 15.0);
-    mu_assert("error, v.x != x", is_equal(v.x, x));
-    mu_assert("error, v.y != y", is_equal(v.y, y));
-    mu_assert("error, v.z != z", is_equal(v.z, z));
+    mu_assert("error, v.x != 0.0", is_equal(v.x, x));
+    mu_assert("error, v.y != 0.0", is_equal(v.y, y));
+    mu_assert("error, v.z != 0.0", is_equal(v.z, z));
+    mu_assert("error, w.x != 15.0", is_equal(w.x, 15.0)); 
     return 0;
 }
 

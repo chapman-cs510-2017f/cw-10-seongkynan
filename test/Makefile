@@ -8,6 +8,8 @@ test_pointers: ../src/structs/structs.o
 test: all
 	./test_pointers
 
-# To clean, remove all object files
 clean:
 	rm -f ../src/structs/*.o
+
+cleaner:
+	rm -f test_pointers

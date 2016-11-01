@@ -26,3 +26,8 @@ test:
 clean:
 	$(MAKE) -C src/ clean
 	$(MAKE) -C test/ clean
+
+cleaner: clean
+	rm -f bin/*
+	$(MAKE) -C src/ cleaner
+	$(MAKE) -C test/ cleaner
