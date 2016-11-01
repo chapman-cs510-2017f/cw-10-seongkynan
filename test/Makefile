@@ -1,15 +1,13 @@
 # Makefile for tests
 
-# Default target: build the program test_factorial
-all: test_factorial 
+all: test_pointers
 
-# The program test_factorial must link the object file ../src/factorial.o
-test_factorial: ../src/factorial.o 
+test_pointers: ../src/structs/structs.o
 
 # Run upon a "make test"
 test: all
-	./test_factorial
+	./test_pointers
 
 # To clean, remove all object files
 clean:
-	rm -f *.o
+	rm -f ../src/structs/*.o

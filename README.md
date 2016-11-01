@@ -1,10 +1,10 @@
-# CS510 CW 9
+# CS510 CW 10
 
 **Author(s):** _\<your name(s)\>_
 
-[![Build Status](https://travis-ci.org/chapman-cs510-2016f/cw-09-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-cs510-2016f/cw-09-YOURNAME)
+[![Build Status](https://travis-ci.org/chapman-cs510-2016f/cw-10-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-cs510-2016f/cw-10-YOURNAME)
 
-**Due date:** 2016/11/01
+**Due date:** 2016/11/08
 
 ## Specification
 
@@ -12,28 +12,31 @@
 
 Complete the following exercises, saving your solutions in the indicated files. 
 
-1. Read the following style guide carefully for C, and use it: [C Style Guide](https://en.wikibooks.org/wiki/C_Programming/Structure_and_style)
-1. Use the following references as needed in what follows. They will be useful throughout the rest of the course.
+1. Recall the following references, which will still be useful throughout the rest of the course.
     * [Learn C in Y Minutes](https://learnxinyminutes.com/docs/c/)
     * [C Cheat Sheet](https://www.cheatography.com/ashlyn-black/cheat-sheets/c-reference/)
     * [C Programming Wikibook](https://en.wikibooks.org/wiki/C_Programming)
     * [Learn Make in Y Minutes](https://learnxinyminutes.com/docs/make/)
-1. Verify that running the command ```make test``` in a command line (from within your repository directory) compiles code and runs unit tests. Do the tests pass? Look through the code. In a Jupyter notebook ```C_Compilation.ipynb```:
-    * Describe what the purpose of a Makefile is
-    * Describe how the code is organized here. Why is this a reasonable structure?
-    * Describe what a header file is.
-    * Describe what a source file is.
-    * Describe what an object file is.
-    * Describe what compiling is.
-    * Describe what linking is.
-1. Look at the definitions for the C function ```int factorial(int n)```. In a Jupyter notebook ```Factorial.ipynb```:
-    * Describe the algorithm being used.
-    * Describe at least two problems with the current function definition.  
-    * Describe how you can fix those problems.
-1. Edit the file ```factorial.c``` (using ```vim```) to fix the two problems you identified. Make sure the tests now pass.
-1. Edit the file ```test_factorial.c``` (using ```vim```) to add one more reasonable test for the factorial function. Make sure the new test passes. 
-1. Push only the changes to the header or source files to GitHub, along with your Jupyter notebooks. You should never push binary programs, or object files, or logs.
-1. Make sure that Travis passes correctly.
+1. Note that a ```bin``` directory has been added. Pay attention to how ```make``` uses this directory in what follows.
+1. Examine the source code in ```src/bit_print``` carefully. Compile and run it.
+    1. In a Jupyter notebook ```BitPrint.ipynb```, describe what ```print_types``` does in detail. Answer the following questions.
+    1. What are the integer values for the letters 'A', 'Z', 'a', and 'z'?
+    1. What are the integer values for the numbers '0', '1', and '9' as characters?
+    1. If you needed to store a 2D array of 10000x10000 complex numbers, how much memory would it require (in megabytes) if: a) the real and imaginary parts were each shorts? b) the real and imaginary parts were each long doubles? (Recall the prefixes: kilo = 10^3, mega = 10^6, giga = 10^9, tera = 10^12, peta = 10^15, exa = 10^18, zetta = 10^21, yotta = 10^24)
+    1. Work out the algorithm for how the bit string for an unsigned int is interpreted as an integer. Describe this algorithm in your notebook.
+    1. Work out the algorithm for how the bit string for a (signed) int is interpreted as an integer. How does this differ from an unsigned int? What are the maximum and minimum bounds of each? Describe this algorithm in your notebook.
+1. Examine the source code in ```src/arrays``` carefully. Compile and run it.
+    1. In a Jupyter notebook ```Arrays.ipynb```, describe what ```arrays``` does in detail. Do the following.
+    1. Change the type of "array" to an array of floats. Make sure the code compiles and runs.
+    1. Change the type of "memblock" to a pointer to long double. Make sure the code compiles and runs.
+    1. Refactor ```arrays.c``` to add two new functions: ```print_arrays``` and ```set_arrays```. Move the existing code from ```main``` into these new functions as appropriate, and call them from ```main```. You will have to think carefully about what types these new functions should be, and what arguments (if any) they should have, of what type(s). Make sure the code compiles and runs.
+    1. In your notebook, explain what ```malloc``` and ```free``` do in detail.
+1. Examine the source code in ```src/structs``` carefully. Compile and run it.
+    1. In a Jupyter notebook ```Structs.ipynb```, describe what ```print_structs``` does in detail. Answer the following questions.
+    1. Explain the difference between "pass by value" and "pass by reference" in your own words. Support your explanation with concrete examples from the program output.
+    1. Explain the difference between ```v.x``` and ```v->x``` for a struct ```v``` with field ```x```.
+1. Examine the existing test in ```test/``` carefully. Compile and run it.
+    1. Add another test that reimplements the "pass by reference" test in ```src/structs```. Ensure that it passes.
 
 ## Assessment
 

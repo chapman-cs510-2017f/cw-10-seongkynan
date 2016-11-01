@@ -1,6 +1,14 @@
 #include <stdio.h>
+#include <math.h>
 #include "minunit.h"
-#include "../src/factorial.h"
+#include "../src/structs/structs.h"
+
+/* It is unwise to compare the equality of floats
+ * As such, one defines a tolerance EPSILON that indicates
+ * the smallest deviation between two floats that one will accept
+ * before declaring the floats unequal
+ */
+#define EPSILON 1e-15
 
 /* Note: structure of test file taken from minunit example at
  *   http://www.jera.com/techinfo/jtns/jtn002.html
@@ -9,29 +17,35 @@
 // Needed for minunit to function properly
 int tests_run = 0;
 
+/* Check equality between COMP values
+ * The size of the absolute value of the difference indicates equality
+ */
+int is_equal(COMP x, COMP y) {
+    return fabs(x - y) < EPSILON;
+}
+
 /* Notice return type of a string (i.e., char *)
  * The default value is 0, which is an empty (null) string
  * If the test fails, it replaces this return with an error string
  */
-static char * test_fac_5() {
+static char * test_pass_by_value() {
     /* This uses the macro defined in minunit.h
      * which performs the Boolean test, and returns the error
      * message string if it fails
      */
-    mu_assert("error, factorial(5) != 120", factorial(5) == 120);
-    return 0;
-}
-
-static char * test_fac_0() {
-    mu_assert("error, factorial(0) != 1", factorial(0) == 1);
+    COMP x = 0, y = 0, z = 0;
+    VEC3 v = {x, y, z};
+    VEC3 w = modifyVec3(v, 15.0);
+    mu_assert("error, v.x != x", is_equal(v.x, x));
+    mu_assert("error, v.y != y", is_equal(v.y, y));
+    mu_assert("error, v.z != z", is_equal(v.z, z));
     return 0;
 }
 
 /* all_tests collects a set of tests defined above, and runs them
  */
 static char * all_tests() {
-    mu_run_test(test_fac_5);
-    mu_run_test(test_fac_0);
+    mu_run_test(test_pass_by_value);
     return 0;
 }
 

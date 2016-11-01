@@ -1,11 +1,8 @@
 # Makefile for main src
 
-# Default target: build program helloworld
-all: helloworld
+all:
+	$(MAKE) -C bit_print/
+	$(MAKE) -C arrays/
 
-# The program helloworld must link with the object file factorial.o
-helloworld: factorial.o
-
-# To clean, remove all object files
 clean:
-	rm -f *.o 
+	$(MAKE) -C bit_print/ clean
