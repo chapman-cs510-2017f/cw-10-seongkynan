@@ -1,10 +1,8 @@
 # CS510 CW 10
 
-**Author(s):** _\<your name(s)\>_
+**Author(s):** **CHANGEME**
 
-[![Build Status](https://travis-ci.org/chapman-cs510-2016f/cw-10-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-cs510-2016f/cw-10-YOURNAME)
-
-**Due date:** 2016/11/08
+[![Build Status](https://travis-ci.org/chapman-cs510-2017f/cw-10-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-cs510-2017f/cw-10-YOURNAME)
 
 ## Specification
 
@@ -17,11 +15,11 @@ Complete the following exercises, saving your solutions in the indicated files.
     * [C Cheat Sheet](https://www.cheatography.com/ashlyn-black/cheat-sheets/c-reference/)
     * [C Programming Wikibook](https://en.wikibooks.org/wiki/C_Programming)
     * [Learn Make in Y Minutes](https://learnxinyminutes.com/docs/make/)
-1. Note that a ```bin``` directory will be created by ```make```. Pay attention to how it is used in what follows. Also pay attention to the added compiler flags in the ```Makefile```
+1. Note that a ```bin``` directory will be created by ```make```. Pay attention to how it is used in what follows, since you will often see this convention used in practice. Also pay attention to the added compiler flags in the ```Makefile```, and what they do.
 1. Examine the source code in ```src/bit_print``` carefully. Compile and run it.
-    1. In a Jupyter notebook ```BitPrint.ipynb```, describe what ```print_types``` does in detail. Answer the following questions.
+    1. In a Jupyter notebook ```BitPrint.ipynb```, describe what ```print_types``` does in detail. By running the compiled program in a terminal, answer the following questions. (Even better, show the output of the program in a cell in your Jupyter notebook using the `%bash` magic command.)
     1. What are the integer values for the letters 'A', 'Z', 'a', and 'z'?
-    1. What are the integer values for the numbers '0', '1', and '9' as characters?
+    1. What are the integer values for the numbers '0', '1', and '9' represented as characters?
     1. If you needed to store a 2D array of 10000x10000 complex numbers, how much memory would it require (in megabytes) if: a) the real and imaginary parts were each shorts? b) the real and imaginary parts were each long doubles? (Recall the prefixes: kilo = 10^3, mega = 10^6, giga = 10^9, tera = 10^12, peta = 10^15, exa = 10^18, zetta = 10^21, yotta = 10^24)
     1. Work out the algorithm for how the bit string for an unsigned int is interpreted as an integer. Describe this algorithm in your notebook.
     1. Work out the algorithm for how the bit string for a (signed) int is interpreted as an integer. How does this differ from an unsigned int? What are the maximum and minimum bounds of each? Describe this algorithm in your notebook.

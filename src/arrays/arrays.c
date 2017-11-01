@@ -3,13 +3,17 @@
 
 int main(void)
 {
-    int array_size = 10;
+    int i; // Iteration index
     
-    // Declare an array of array_size integers in the usual way
+    /* Array syntax for defining an array */
+    int array_size = 10;
     int array[array_size];
+    /* End array syntax declaration */
 
+    /* Explicit memory allocation for defining the same array */
+    
     // Allocate a block of array_size integers and assign the address
-    // of the beginning of the memory block to the pointer array2
+    // of the beginning of the memory block to the pointer memblock
     int *memblock = malloc(array_size * sizeof(int));
     /* WARNING: malloc may fail and return a NULL value for the pointer
                 Good programming practice mandates checking for such failures.
@@ -21,11 +25,14 @@ int main(void)
       return -1;
     }
 
-    // iteration index
-    int i;
+    /* End explicit memory allocation declaration */
+    
+    /* String example showing the two methods are equivalent */
     // constant character array (i.e., a string)
     const char *foo = "Foo bar .";
+    /* End string declaration as array of characters */
     
+    /* Fill declared arrays with integers */
     for (i=0; i < array_size; i++)
     {
         // assign the value i to the ith element 
@@ -34,20 +41,23 @@ int main(void)
         // set the value inside the memory address at memblock + (i bytes) to i
         *(memblock+i) = i;
     }
+    /* End fill with integers */
 
-    // increment three bytes BEYOND the allocated memory (buffer overrun)
+    /* Print out results to verify exactly what the above code did */
+
+    // Note: this increments three bytes BEYOND the allocated memory (buffer overrun)
     for (i=0; i < (array_size + 3); i++)
     {
-        // print the array values in the usual way
+        // print the array values using array syntax
         printf("array[%d] : %d\t", i, array[i]);
         
-        // print the values contained in each memory address from memblock on
+        // print values contained in each memory address starting at memblock 
         printf("*(memblock + %d) : %d\t", i, *(memblock+i));
         
-        // print each character in the string
+        // print each character in the string using array syntax
         printf("foo[%d] : %c\t", i, foo[i]);
         
-        // do the same thing, but in pointer notation
+        // do the same thing as above, but in memory pointer notation
         printf("*(foo + %d) : %c\n", i, *(foo+i));
     }
     
