@@ -1,23 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int set_arrays(int array_size, float *array, long double *memblock);
+void print_arrays(int array_size, float *array, long double *memblock, const char *foo);
+
 int main(void)
 {
-    int i; // Iteration index
-    
-    /* Array syntax for defining an array */
     int array_size = 10;
     float array[array_size];
-    /* End array syntax declaration */
-
-    /* Explicit memory allocation for defining the same array */
+    long double *memblock = malloc(array_size * sizeof(long double));;
+    const char *foo = "Foo bar .";;
     
-    // Allocate a block of array_size integers and assign the address
-    // of the beginning of the memory block to the pointer memblock
-    long double *memblock = malloc(array_size * sizeof(long double));
-    /* WARNING: malloc may fail and return a NULL value for the pointer
-                Good programming practice mandates checking for such failures.
-    */
+    set_arrays(array_size, array, memblock);
+    print_arrays(array_size, array, memblock, foo);
+    
+    printf("array size %d\t", array_size);
+    printf("float array %f\t", array[0]);
+    printf("memblock %Lf\t", memblock[0]);
+    printf("char foo %c\t", foo[0]);
+
+    
+    // explicitly free the block of memory malloc-ed at memblock 
+    free(memblock);
+
+    // memory not explicitly freed is automatically freed on function exit
+    return 0;
+}
+
+int set_arrays(int array_size, float *array, long double *memblock) {
+    int i; // Iteration index
+    
     if (NULL == memblock) {
       // Print to the "file" of standard error, rather than standard out
       fprintf(stderr, "malloc failed\n");
@@ -25,13 +37,6 @@ int main(void)
       return -1;
     }
 
-    /* End explicit memory allocation declaration */
-    
-    /* String example showing the two methods are equivalent */
-    // constant character array (i.e., a string)
-    const char *foo = "Foo bar .";
-    /* End string declaration as array of characters */
-    
     /* Fill declared arrays with integers */
     for (i=0; i < array_size; i++)
     {
@@ -41,9 +46,14 @@ int main(void)
         // set the value inside the memory address at memblock + (i bytes) to i
         *(memblock+i) = i;
     }
-    /* End fill with integers */
+    
+    return 0;
+    /* End fill with integers */    
+}
 
+void print_arrays(int array_size, float *array, long double *memblock, const char *foo) {
     /* Print out results to verify exactly what the above code did */
+    int i;
 
     // Note: this increments three bytes BEYOND the allocated memory (buffer overrun)
     for (i=0; i < (array_size + 3); i++)
@@ -59,11 +69,13 @@ int main(void)
         
         // do the same thing as above, but in memory pointer notation
         printf("*(foo + %d) : %c\n", i, *(foo+i));
-    }
-    
-    // explicitly free the block of memory malloc-ed at memblock 
-    free(memblock);
-
-    // memory not explicitly freed is automatically freed on function exit
-    return 0;
+    }    
 }
+
+
+
+
+
+    
+    
+
