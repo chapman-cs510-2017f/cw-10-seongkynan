@@ -1,8 +1,8 @@
 # CS510 CW 10
 
-**Author(s):** **CHANGEME**
+**Author(s):** **Seong and Kynan**
 
-[![Build Status](https://travis-ci.org/chapman-cs510-2017f/cw-10-YOURNAME.svg?branch=master)](https://travis-ci.org/chapman-cs510-2017f/cw-10-YOURNAME)
+[![Build Status](https://travis-ci.org/chapman-cs510-2017f/cw-10-seongkynan.svg?branch=master)](https://travis-ci.org/chapman-cs510-2017f/cw-10-seongkynan)
 
 ## Specification
 
@@ -40,7 +40,9 @@ Complete the following exercises, saving your solutions in the indicated files.
 
 Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have.
 
-**CHANGEME**
+1. **It was helpful to learn the byte/bit level implications of each type. It is critically important to take advantages of C proramming's flexibility that allows memory management as needed. Definitely, it requires good understanding of memory and type.**
+2. **Using a pointer is a little complicated in the beginning. Learning how to set and deference a pointer was helpful. Passing a pointer as a function argument is a good technique to save memory and to update the value of variable outside a function.**
+3. **C Programming does not have the array type. Array is just a consecutive space of memory. To create an array, we can use a pointer or a function malloc. Malloc is much easier to manage memory. In C programming, string is an array of characters. It is a little bit cumbersome to count/consider memory space for the implementation of stings, which is a very simple job in another language.**
 
 ## Honor Pledge
 
@@ -51,4 +53,4 @@ I pledge that all the work in this repository is my own with only the following 
 
 Signed,
 
-**YOURNAME**
+**Seong and Kynan**
